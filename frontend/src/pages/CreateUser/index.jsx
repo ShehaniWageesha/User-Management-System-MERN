@@ -10,11 +10,12 @@ function CreateUser() {
     gender: "",
     city: "",
     dob: new Date(),
+    photo: null,
   });
 
-  function handleChange(evt) {
-    const name = evt.target.name;
-    const value = evt.target.value;
+  function handleChange(event) {
+    const name = event.target.name;
+    const value = event.target.value;
     setData({
       ...data,
       [name]: value,
@@ -110,6 +111,18 @@ function CreateUser() {
                   dob: newDate,
                 })
               }
+            />
+          </div>
+        </div>
+        <div className="form-group">
+          <label>Photo :</label>
+          <div>
+            <input
+              type="file"
+              name="photo"
+              value={data.photo}
+              accept=".png, .jpg, .jpeg"
+              onChange={handleChange}
             />
           </div>
         </div>

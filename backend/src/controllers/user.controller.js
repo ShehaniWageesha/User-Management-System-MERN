@@ -12,13 +12,14 @@ const create = async (req, res) => {
         .json({ message: "Invalid request", errors: errors.array() });
     }
 
-    const { username, gender, city, dob } = req.body;
+    const { username, gender, city, dob, photo } = req.body;
 
     const result = await UserService.createUsers({
       username,
       gender,
       city,
       dob,
+      photo,
     });
     return res.status(httpStatus.OK).json({ result });
   } catch (error) {
@@ -53,7 +54,7 @@ const findOne = async (req, res) => {
 const update = async (req, res) => {
   try {
     const id = req.params.id;
-    const { username, gender, city, dob } = req.body;
+    const { username, gender, city, dob, photo } = req.body;
 
     const result = await UserService.updateUser({
       id,
@@ -61,6 +62,7 @@ const update = async (req, res) => {
       gender,
       city,
       dob,
+      photo,
     });
 
     return res.status(httpStatus.OK).json({ result });

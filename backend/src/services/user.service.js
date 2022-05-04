@@ -4,7 +4,7 @@ const UserModel = require("../models/user.model");
 const APIError = require("../helpers/api-error");
 const logger = require("../helpers/logger");
 
-const createUsers = async ({ username, gender, city, dob }) => {
+const createUsers = async ({ username, gender, city, dob, photo }) => {
   let session = null;
   try {
     session = await mongoose.startSession();
@@ -15,6 +15,7 @@ const createUsers = async ({ username, gender, city, dob }) => {
       gender,
       city,
       dob,
+      photo,
     });
 
     const createUsers = await user.save({ session });
@@ -73,11 +74,11 @@ const getUserById = async (id) => {
   }
 };
 
-const updateUser = async ({ id, username, gender, city, dob }) => {
+const updateUser = async ({ id, username, gender, city, dob, photo }) => {
   try {
     const user = await UserModel.findById(id);
 
-    user.overwrite({ username, gender, city, dob });
+    user.overwrite({ username, gender, city, dob, photo });
     await user.save();
 
     return {

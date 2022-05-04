@@ -54,6 +54,7 @@ function UsersList() {
             <th>Gender</th>
             <th>City</th>
             <th>Date of Birth</th>
+            <th>Photo</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -64,6 +65,7 @@ function UsersList() {
               <td>{item.gender}</td>
               <td>{item.city}</td>
               <td>{format(new Date(item.dob), "yyyy-MM-dd")}</td>
+              <td>{item.photo}</td>
               <td>
                 <Link
                   to={`${RoutePaths.edit}${item._id}`}

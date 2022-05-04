@@ -8,6 +8,7 @@ const userSchema = new Schema(
     gender: { type: String, require: true },
     city: { type: String, require: true },
     dob: { type: Date, require: true },
+    photo: { type: String, require: true },
   },
   {
     timestamps: true,

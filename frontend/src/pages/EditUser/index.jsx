@@ -137,6 +137,18 @@ function EditUser() {
             />
           </div>
         </div>
+        <div className="form-group">
+          <label>Photo :</label>
+          <div>
+            <input
+              type="file"
+              name="photo"
+              defaultValue={""}
+              accept=".png, .jpg, .jpeg"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
         <br></br>
         <div className="form-group">
           <input
