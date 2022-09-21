@@ -64,7 +64,7 @@ function UsersList() {
               <td>{item.username}</td>
               <td>{item.gender}</td>
               <td>{item.city}</td>
-              <td>{format(new Date(item.dob), "yyyy-MM-dd")}</td>
+              <td>{item.dob}</td>
               <td>{item.photo}</td>
               <td>
                 <Link
