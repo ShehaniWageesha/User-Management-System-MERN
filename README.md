@@ -17,3 +17,6 @@ npm install
 ```sh
 npm start
 ```
+<br/>
+
+![SS](https://user-images.githubusercontent.com/66903669/191597130-59b3204b-56eb-4a79-afa3-bd8e66d5de14.PNG)
